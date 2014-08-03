@@ -24,7 +24,7 @@ class NewAlarm(Clock):
         view = self.marionette.find_element(*self._alarm_view_locator)
         self.wait_for_condition(lambda m: view.location['x'] == 0 and view.is_displayed())
         # Bug 1032852 This is to bust intermittents caused by this bug that causes keyboard not to appear upon tap
-        time.sleep(1.5)
+        time.sleep(10)
 
     def type_alarm_label(self, value):
         self.marionette.find_element(*self._alarm_name_locator).tap()
